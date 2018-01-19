@@ -1,0 +1,29 @@
+// Primeiramente deve ser importado a biblioteca Scanner para leitura de dados de entrada do usuário.
+import java.util.Scanner;
+
+public class Principal {
+// Criando uma classe para o Scanner.
+	private static Scanner sc;
+// Método Main.
+	public static void main(String[] args) {
+// c = contador, n = numero, r = resposta(Se desejo continuar ou não), s = soma, m = média.
+		int c = 1, n = 0, r = 1,s = 0; 
+		float m = 0;
+		System.out.println("Calculadora Inteligente\n\n");
+// Estanciando a classe Scanner. 
+		sc = new Scanner(System.in);		
+// Enquanto a resposta for '1', o programa executará um looping de repetição. 
+		while (r == 1) {
+			System.out.print("Digite o "+c+"º número: ");
+			n = sc.nextInt(); // O usuário deve digitar o número no qual deseja calcular. 
+			System.out.println("Deseja continuar?\n[1] - Sim\n[2] - Não ");			
+			r = sc.nextInt(); 
+// Caso seja digita um número diferente de '1', o programa finalizará o processo. 
+			s += n; // Somando valores.
+			m =  s / c; // Média de valores.
+			c++; // É importante acrescentar +1 na contagem somente no final do programa para não afetar o resultado da média. 
+ 		}
+		System.out.println("A soma dos valores foi: "+s);
+		System.out.println("A média dos valores é: "+m);
+	}
+}
