@@ -1,0 +1,86 @@
+// Calculadora básica por Keven Willy 
+
+import java.util.Scanner;
+
+public class ObjCalc {
+
+ // Atributos
+
+	public double n1; // Primeiro número
+	public double n2; // Segundo número
+	public double resp; // Respota
+	public int opcao; // Opção para o método Menu
+	
+	Scanner sc = new Scanner(System.in);
+	
+	void menu() {
+  
+  // Método Menu da calculadora 
+		
+		System.out.println("CALCULADORA BÁSICA\n");
+		System.out.println("Escolha um número equivalente a operação: \n1-[+]\n2-[-]\n3-[*]\n4-[/]\nOutro número - [SAIR]");
+		opcao = sc.nextInt(); 
+		switch(opcao) {
+		case 1: 
+			System.out.println("Digite primeiro número: ");
+			this.n1 = sc.nextDouble();
+			System.out.println("Digite segundo número: ");
+			this.n2 = sc.nextDouble();
+			soma();
+			System.out.println("Resposta: "+this.resp);
+			break;
+		case 2: 
+			System.out.println("Digite primeiro número: ");
+			this.n1 = sc.nextDouble();
+			System.out.println("Digite segundo número: ");
+			this.n2 = sc.nextDouble();
+			sub();
+			System.out.println("Resposta: "+this.resp);
+			break;
+		case 3: 
+			System.out.println("Digite primeiro número: ");
+			this.n1 = sc.nextDouble();
+			System.out.println("Digite segundo número: ");
+			this.n2 = sc.nextDouble();
+			mult();
+			System.out.println("Resposta: "+this.resp);
+			break;
+		case 4: 
+			System.out.println("Digite primeiro número: ");
+			this.n1 = sc.nextDouble();
+			System.out.println("Digite segundo número: ");
+			this.n2 = sc.nextDouble();
+			if (this.n2 == 0) {
+				System.out.println("Não existe divisão por zero!");
+			} else {
+				div();
+				System.out.println("Resposta: "+this.resp);
+			}	
+			break;
+		default: 
+			System.out.println("Saindo...");
+		}
+	}
+	
+  // Métodos para as operações matemáticas
+  
+	double soma() { // sum
+		this.resp = n1 + n2;
+		return this.resp;
+	}
+	double sub() { // subtraction
+		this.resp = n1 - n2;
+		return this.resp;
+	}
+	double mult() { // multiplication 
+		this.resp = n1 * n2; 
+		return this.resp;
+	}
+	double div() { // division 
+		this.resp = n1 / n2;
+		return this.resp;
+	}
+
+}
+
+// Após criar a classe acima, não esqueça de criar uma classe Principal para executar o programa, estanciando um objeto. 
