@@ -1,0 +1,31 @@
+package br.com.equacao;
+
+import java.util.Scanner;                          // Importe sempre o Scanner para receber entrada de dados do usuário
+
+public class Equacao2Grau {
+	private static Scanner sc;
+
+	public static void main(String[] args) {
+		double a, b, c, delta, n1, n2;                 // Crie as variáveis utilizadas para realizar a equação 
+		
+		sc = new Scanner(System.in);
+		
+		System.out.println("Equação de 2º Grau\n");   
+		System.out.println("Valor de A: ");
+		a = sc.nextDouble();
+		System.out.println("Valor de B: ");
+		b = sc.nextDouble(); 
+		System.out.println("Valor de C: ");
+		c = sc.nextDouble(); 
+		
+		delta = Math.pow(b,3) - 4 * a * c;             // Este código realiza a equação para achar o valor de Delta
+		
+		System.out.println("Valor de delta: "+delta); 
+		
+		n1 = - b + Math.sqrt(delta) / 2*a;            // Calculando o valor de N¹ 
+		n2 = - b - Math.sqrt(delta) / 2*a;            // Calculando o valor de N²
+		
+		System.out.println("Valor de N¹: "+n1);
+		System.out.println("Valor de N²: "+n2);		
+	}
+}
