@@ -1,0 +1,69 @@
+	private static Scanner sc;
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub		
+		sc = new Scanner(System.in);
+				
+		System.out.println("Digite quantas pessoas deseja entrevistar: ");
+		int np = sc.nextInt();
+		
+		String sex[] = new String[np];
+		float alt[] = new float[np];
+		int i = 0;  
+			
+		for (int c = 1; c <= np; c++) {
+			System.out.println("Digite a altura da "+c+"ª pessoa: ");
+			alt[i] = sc.nextFloat();
+			System.out.println("Digite o sexo da "+c+"ª pessoa:\n[M]-Homem\n[F]-Mulher");
+			sex[i] = sc.next();
+			
+			i++;		 						
+		}
+		i = 0; // Zerando o vetor 
+		float altura = 0; // Inicializando a variável altura
+		int inc = 1; // Inicializando a contagem de pessoas
+		
+		for(int c = 1; c <= np; c++) {
+			altura = altura + alt[i];  
+			inc++; // Adicionando contagem de pessoas
+			i++; // Adicionando vetorização
+		}
+		i = 0; // Zerando novamente o vetor
+		float alturaFor = 0; // inicializando a variável de maior altura
+		
+		for(int c = 1; c <= np; c++) { 
+			if(alturaFor < alt[i]) { // Se a maior altura for menor que a altura 
+				alturaFor = alt[i]; // Maior altura é igual a altura
+			} 
+		}
+		i = 0; // Zerando vetor novamente
+		String sexoM = new String("M"); //Instanciando variável masculina
+		String sexoF = new String("F"); //Instanciando variável feminina
+		float altM = 0; //altura masculina
+		float altF = 0; //altura feminina
+		int incM = 0; // contagem de altura masculina
+		int incF = 0;  //contagem de altura feminina
+		
+		for(int c = 1; c <= np; c++) { 
+			if(sex[i].equals(sexoM)) { 
+				altM += alt[i]; //Soma de altura masculina 
+				incM++;
+			}
+			
+			if(sex[i].equals(sexoF)) {
+				altF += alt[i]; // Soma de altura feminina
+				incF++; 
+			}
+			
+			i++;
+		}
+		
+		
+		
+		System.out.println("Média de alturas: "+(altura / (inc-1)));
+		System.out.println("Maior altura: "+alturaFor);
+		System.out.println("Altura média das mulheres: "+altF / incF);
+		System.out.println("Altura média dos homens: "+altM / incM);
+		System.out.println("Quantidade de homens: "+incM);
+
+	}
