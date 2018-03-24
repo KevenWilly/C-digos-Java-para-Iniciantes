@@ -1,0 +1,49 @@
+public class Vetor {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 
+		double media = 0;
+
+		
+		Random gerador = new Random();
+		int[] Vetor = new int[100];
+		int c = 0;
+		int soma = 0;
+		int contador = 1;
+		
+		for(c = 0; c < Vetor.length; c++) {			
+			Vetor[c] = gerador.nextInt(100);			
+							
+		}
+		c = 0;
+		Arrays.sort(Vetor);
+		for(int i: Vetor) {
+			System.out.println(i);
+		}
+		
+		int pares = 0, impares = 0;
+		
+		for(c = 0; c < Vetor.length; c++) {
+			if(Vetor[c] % 2 == 1) {
+				impares++;
+				if(Vetor[c] > 50) {
+					contador++;
+				}
+			} else {
+				pares++;
+			}			
+			
+		}
+		c = 0;
+		for(c = 1; c < Vetor.length; c++) {
+			soma  += Vetor[c];
+			c++;
+		}	
+		media = soma / contador;
+		
+		System.out.println("Média: "+media);
+		System.out.println("Total de pares: "+pares);
+		System.out.println("Total de impares: "+impares);
+	}
+}
