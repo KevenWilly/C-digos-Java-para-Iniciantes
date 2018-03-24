@@ -1,0 +1,60 @@
+public class Vetorxy {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int[] vetorx = new int[40];
+		Random numeros = new Random();
+		int c = 0;		
+		
+		for(c = 0; c < vetorx.length; c++) {
+			vetorx[c] = numeros.nextInt(90);
+			System.out.println(vetorx[c]);
+		}		
+		
+		int n = 0;
+		c = 0;
+		for(c = 0; c < vetorx.length; c++) {
+			if(vetorx[c] >= 10 && vetorx[c] <= 40) {
+				n++;			
+			}
+		}	
+		c = 0;
+		int [] vetory = new int[n];
+		
+		n = 0;
+		c = 0;
+		for(c = 0; c < vetorx.length; c++) {
+			if(vetorx[c] >= 10 && vetorx[c] <= 40) {
+			vetory[n] = vetorx[c];
+			n++;
+			}			
+		}
+		c = 0;
+		for(c = 0; c < vetory.length; c++) {
+			System.out.print(vetory[c]+" ,");
+		}
+		c = 0;
+		
+		int p = 0;
+		
+		for(c = 0; c < vetorx.length; c++) {
+			if(vetorx[c] % 2 == 0) {
+				p++;
+			}
+		}
+		c = 0;
+		int []vetorw = new int[p];
+		p = 0;
+		for(c = 0; c < vetorx.length; c++) {
+			if(vetorx[c] % 2 == 0) {
+				vetorw[p] = vetorx[c];
+				p++;
+			}		
+		}
+		c = 0;
+		System.out.print("\nNumero pares: ");
+		for(c = 0; c < vetorw.length; c++) {
+			System.out.print(vetorw[c]+" ,");
+		}			
+	}
+}
