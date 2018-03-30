@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class Principal {
+
+	private static Scanner sc;
+
+	public static void main(String[] args) {
+		sc = new Scanner(System.in);
+		
+		int qa;
+		
+		System.out.println("Quantos alunos deseja avaliar? ");
+		qa = sc.nextInt();
+		
+		String nome[] = new String[qa];
+		double nota[] = new double[qa];
+		int i = 0; 
+		String situacao[] = new String[qa];
+		int c = 0;
+		for(c = 1; c <= qa; c++) {
+			System.out.println("Digite o "+c+" aluno: ");
+			nome[i] = sc.next();
+			System.out.println("Digite a nota de "+nome[i]+": ");
+			nota[i] = sc.nextDouble();
+			i++;			
+		}		
+		i = 0;
+		for(c = 1; c <= qa; c++) {
+			if(nota[i] >= 7) {
+				situacao[i] = "Aprovado";
+			} else if(nota[i] < 7 && nota[i] >= 5 ) {
+				situacao[i] = "Recuperação";
+			} else if(nota[i] < 5) {
+				situacao[i] = "Reprovado";
+			}
+			i++;
+		}
+		i = 0;
+ 		for(c = 1; c <= qa; c++) { 			
+ 			System.out.println("Aluno: "+nome[i]+" - Nota: "+nota[i]+ " - Situação: "+situacao[i]);
+ 			i++;
+ 		}
+ 	}
