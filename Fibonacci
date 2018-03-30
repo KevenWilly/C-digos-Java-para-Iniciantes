@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class Fibonacci {
+
+	private static Scanner sc;
+
+	public static void main(String[] args) {
+		sc = new Scanner(System.in);
+		
+		System.out.println("Digite quantidade de números: ");
+		int n = sc.nextInt();
+
+		int Fib = 1;
+		int nAnt = 0;
+	
+		int i = 1;
+
+		
+		for(i = 1; i <= n; i++) {
+			if(i == 1) {
+				Fib = 1;
+				nAnt = 0;
+			} else {
+				Fib += nAnt; 
+				nAnt = Fib - nAnt;
+			}
+			
+			System.out.print(Fib+" ");
+		}	
+
+	}
