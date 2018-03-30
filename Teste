@@ -1,0 +1,25 @@
+import java.util.Random;
+
+public class AcheNoVetorN {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Random nr = new Random();
+		int[] vetorN = new int[20];
+				int i = 0;
+		boolean repetido = false;
+		
+		
+		for(i = 0; i < vetorN.length; i++) {
+			vetorN[i] = nr.nextInt(20);
+			System.out.println(vetorN[i]);
+		}
+		int[] vetorR = new int[vetorN[i]];
+		i = 0;
+		for(i = 0; i < vetorR.length; i++) {
+			if(vetorN[i] == vetorR[i]) {
+				repetido = true;
+			System.out.println("Números repetidos: "+repetido);
+			}
+		}
+	}
